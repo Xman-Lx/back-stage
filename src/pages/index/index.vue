@@ -16,8 +16,7 @@
             <span slot="title">首页</span>
           </el-menu-item>
           <!-- 是目录 -->
-          <!-- <div v-for="item in userInfo.menus" :key="item.id">
-           
+          <div v-for="item in userInfo.menus" :key="item.id">
             <el-submenu :index="item.id + ''" v-if="item.children">
               <template slot="title">
                 <i :class="item.icon"></i>
@@ -33,13 +32,12 @@
               </el-menu-item-group>
             </el-submenu>
 
-          
             <el-menu-item v-else :index="item.url">{{
               item.title
             }}</el-menu-item>
-          </div> -->
+          </div>
           <!-- 菜单 -->
-          <el-submenu index="2">
+          <!-- <el-submenu index="2">
             <template slot="title">
               <i class="el-icon-setting"></i>
               <span>系统设置</span>
@@ -49,9 +47,9 @@
               <el-menu-item index="/index/role">角色管理</el-menu-item>
               <el-menu-item index="/index/manager">管理员管理</el-menu-item>
             </el-menu-item-group>
-          </el-submenu>
+          </el-submenu> -->
 
-          <el-submenu index="3">
+          <!-- <el-submenu index="3">
             <template slot="title">
               <i class="el-icon-goods"></i>
               <span>商城设置 </span>
@@ -64,7 +62,7 @@
               <el-menu-item index="/index/banner">轮播图管理</el-menu-item>
               <el-menu-item index="/index/seckill">秒杀管理</el-menu-item>
             </el-menu-item-group>
-          </el-submenu>
+          </el-submenu> -->
         </el-menu>
       </el-aside>
       <el-container>
