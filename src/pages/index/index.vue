@@ -15,9 +15,9 @@
             <i class="el-icon-menu"></i>
             <span slot="title">首页</span>
           </el-menu-item>
-
-          <div v-for="item in userInfo.menus" :key="item.id">
-            <!-- 是目录 -->
+          <!-- 是目录 -->
+          <!-- <div v-for="item in userInfo.menus" :key="item.id">
+           
             <el-submenu :index="item.id + ''" v-if="item.children">
               <template slot="title">
                 <i :class="item.icon"></i>
@@ -33,13 +33,13 @@
               </el-menu-item-group>
             </el-submenu>
 
-            <!-- 菜单 -->
+          
             <el-menu-item v-else :index="item.url">{{
               item.title
             }}</el-menu-item>
-          </div>
-
-          <!-- <el-submenu index="2">
+          </div> -->
+          <!-- 菜单 -->
+          <el-submenu index="2">
             <template slot="title">
               <i class="el-icon-setting"></i>
               <span>系统设置</span>
@@ -64,20 +64,16 @@
               <el-menu-item index="/index/banner">轮播图管理</el-menu-item>
               <el-menu-item index="/index/seckill">秒杀管理</el-menu-item>
             </el-menu-item-group>
-          </el-submenu> -->
+          </el-submenu>
         </el-menu>
       </el-aside>
       <el-container>
         <el-header style="text-align: right; font-size: 12px">
-          <span>王小虎</span>&nbsp;&nbsp;
-          <el-dropdown>
-            <i class="el-icon-setting" style="margin-right: 15px"></i>
-            <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item>查看</el-dropdown-item>
-              <el-dropdown-item>新增</el-dropdown-item>
-              <el-dropdown-item @click="loginout">退出</el-dropdown-item>
-            </el-dropdown-menu>
-          </el-dropdown>
+          <span>{{ userInfo.username }}</span
+          >&nbsp;&nbsp;
+
+          <i class="el-icon-setting" style="margin-right: 15px"></i>
+          <el-button @click="loginout">退出</el-button>
         </el-header>
         <el-main>
           <el-breadcrumb v-if="$route.name" separator="/">

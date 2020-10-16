@@ -20,6 +20,7 @@ export default {
   methods: {
     isshow() {
       this.info.isshow = true;
+      this.info.isadd = true;
     },
     edit(id) {
       this.info = {
