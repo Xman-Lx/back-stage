@@ -14,6 +14,7 @@
             type="datetime"
             placeholder="请选择开始时间"
             v-model="form.begintime"
+            value-format="timestamp"
           >
           </el-date-picker>
           <span>-</span>
@@ -21,6 +22,7 @@
             type="datetime"
             placeholder="请选择结束时间"
             v-model="form.endtime"
+            value-format="timestamp"
           >
           </el-date-picker>
         </el-form-item>
@@ -221,8 +223,7 @@ export default {
         if (res.data.code == 200) {
           this.form = res.data.list;
           this.form.id = id;
-          // this.$refs.tree.setCheckedKeys(JSON.parse(this.form.menus));
-
+          this.form.begintime;
           this.info.isadd = false;
         } else {
           alert(res.data.msg);
