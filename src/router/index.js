@@ -15,51 +15,87 @@ const banner = () => Promise.resolve(import("../pages/banner/banner"));
 const specs = () => Promise.resolve(import("../pages/specs/specs"));
 const home = () => Promise.resolve(import("../pages/home/home"));
 
+function checked(path, next) {
+  let menus_url = store.state.userInfo.menus_url;
+  if (menus_url.includes(path)) {
+    next();
+  } else {
+    next("/index");
+  }
+}
+
 export let indexrouter = [
   {
     path: "menu",
     component: menu,
-    name: "菜单管理"
+    name: "菜单管理",
+    beforeEnter(to, from, next) {
+      checked("/index/menu", next);
+    }
   },
   {
     path: "role",
     component: role,
-    name: "角色管理"
+    name: "角色管理",
+    beforeEnter(to, from, next) {
+      checked("/index/role", next);
+    }
   },
   {
     path: "vip",
     component: vip,
-    name: "会员管理"
+    name: "会员管理",
+    beforeEnter(to, from, next) {
+      checked("/index/vip", next);
+    }
   },
   {
     path: "specs",
     component: specs,
-    name: "商品规格"
+    name: "商品规格",
+    beforeEnter(to, from, next) {
+      checked("/index/specs", next);
+    }
   },
   {
     path: "classify",
     component: classify,
-    name: "商品分类"
+    name: "商品分类",
+    beforeEnter(to, from, next) {
+      checked("/index/classify", next);
+    }
   },
   {
     path: "banner",
     component: banner,
-    name: "轮播图管理"
+    name: "轮播图管理",
+    beforeEnter(to, from, next) {
+      checked("/index/banner", next);
+    }
   },
   {
     path: "goods",
     component: goods,
-    name: "商品管理"
+    name: "商品管理",
+    beforeEnter(to, from, next) {
+      checked("/index/goods", next);
+    }
   },
   {
     path: "seckill",
     component: seckill,
-    name: "秒杀活动"
+    name: "秒杀活动",
+    beforeEnter(to, from, next) {
+      checked("/index/seckill", next);
+    }
   },
   {
     path: "manager",
     component: manager,
-    name: "管理员管理"
+    name: "管理员管理",
+    beforeEnter(to, from, next) {
+      checked("/index/manager", next);
+    }
   }
 ];
 

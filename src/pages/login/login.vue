@@ -40,8 +40,9 @@ export default {
       reqLogin(this.form).then((res) => {
         if (res.data.code == 200) {
           this.changeuser(res.data.list);
-
           this.$router.push("/index");
+
+          console.log(res);
         } else {
           alert(res.data.msg);
         }

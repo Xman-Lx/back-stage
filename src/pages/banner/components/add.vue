@@ -111,7 +111,21 @@ export default {
         alert("文件格式不对");
       }
     },
+    checkadd() {
+      if (this.form.title == "") {
+        alert("标题不能为空");
+        return false;
+      }
+      if (this.form.imgUrl == null) {
+        alert("图片不能为空");
+        return false;
+      }
+      return true;
+    },
     add() {
+      if (!this.checkadd()) {
+        return;
+      }
       reqBanadd(this.form).then((res) => {
         if (res.data.code == 200) {
           this.reqActionlist();

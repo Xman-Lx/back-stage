@@ -21,7 +21,7 @@
           <el-input v-model="form.catename"></el-input>
         </el-form-item>
 
-        <el-form-item label="图片">
+        <el-form-item label="图片" v-if="this.form.pid != 0">
           <el-upload
             class="avatar-uploader"
             action="#"
@@ -129,7 +129,17 @@ export default {
         alert("文件格式不对");
       }
     },
+    checkadd() {
+      if (this.form.catename == "") {
+        alert("角色名称不能为空");
+        return false;
+      }
+      return true;
+    },
     add() {
+      if (!this.checkadd()) {
+        return;
+      }
       reqClassadd(this.form).then((res) => {
         if (res.data.code == 200) {
           this.reqActionlist();

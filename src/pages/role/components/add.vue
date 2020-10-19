@@ -112,6 +112,7 @@ export default {
     },
 
     update() {
+      this.form.menus = JSON.stringify(this.$refs.tree.getCheckedKeys());
       reqRoleedit(this.form).then((res) => {
         if (res.data.code == 200) {
           this.reqActionlist();

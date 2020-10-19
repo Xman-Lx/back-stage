@@ -249,7 +249,25 @@ export default {
         alert("文件格式不对");
       }
     },
+    checkadd() {
+      if (
+        this.form.some((item) => {
+          item == "";
+        })
+      ) {
+        alert("所有选项必须填写");
+        return false;
+      }
+      if (this.form.img == null) {
+        alert("图片不能为空");
+        return false;
+      }
+      return true;
+    },
     add() {
+      if (!this.checkadd()) {
+        return;
+      }
       this.form.description = this.editor.txt.html();
       let data = {
         ...this.form,

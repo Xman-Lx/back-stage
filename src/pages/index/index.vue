@@ -47,9 +47,9 @@
               <el-menu-item index="/index/role">角色管理</el-menu-item>
               <el-menu-item index="/index/manager">管理员管理</el-menu-item>
             </el-menu-item-group>
-          </el-submenu> -->
+          </el-submenu>
 
-          <!-- <el-submenu index="3">
+          <el-submenu index="3">
             <template slot="title">
               <i class="el-icon-goods"></i>
               <span>商城设置 </span>
